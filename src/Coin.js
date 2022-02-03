@@ -1,15 +1,18 @@
 import { Component } from "react";
-import heads from "./assets/coin_head.jpg";
+import head from "./assets/coin_head.jpg";
+import tail from "./assets/coin_tail.jpg";
 
 class Coin extends Component {
   static defaultProps = {
-    face: heads,
+    head,
+    tail,
+    face: "head",
   };
 
   render() {
     return (
       <div className="Coin">
-        <img src={this.props.face} />
+        <img src={this.props[this.props.face]} alt={this.props.face} />
       </div>
     );
   }
